@@ -11,8 +11,3 @@ def store_embedding(text, embedding):
     embedding_blob = pickle.dumps(embedding)
     c.execute('INSERT INTO embeddings (text, embedding) VALUES (?, ?)', (text, embedding_blob))
     conn.commit()
-
-if __name__ == "__main__":
-    text = generate_embeddings.extract_text.extract_text_from_pdf('../data/sample.pdf')
-    embedding = generate_embeddings.generate_embeddings(text)
-    store_embedding(text, embedding)
