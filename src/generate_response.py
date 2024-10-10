@@ -19,5 +19,9 @@ def generate_response(chunks, query):
     prompt = prompt_template.format(context="\n".join(chunks), query=query)
     
     # Generate response using the LLM
-    response = llm.complete(prompt=prompt)
+    try:
+        response = llm.complete(prompt=prompt)
+    except Exception as e:
+        print(f"An error occurred while generating the response: {e}")
+        response = ""
     return response
