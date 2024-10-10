@@ -2,7 +2,7 @@ from langchain import PromptTemplate
 from ollama import Ollama
 import src.query_retrieval as query_retrieval
 
-llm = Ollama(model='command-r')
+llm = Ollama(model='command-r-35b')
 
 def generate_response(chunks, query):
     # Define a prompt template using LangChain
