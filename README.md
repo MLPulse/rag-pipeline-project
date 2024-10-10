@@ -2,9 +2,7 @@
 
 ## Description
 
-This repository contains a pipeline for answering queries over PDF documents using embeddings. The project utilizes Ollama for 
-embedding generation, LangChain for retrieval, SQLite for embedding storage, and a locally hosted Command-R LLM for response 
-generation. The project is designed to facilitate efficient query-answering over large PDF documents.
+This project provides a pipeline for answering queries over PDF documents using embeddings. The project uses SentenceTransformers for embedding generation, LangChain for prompt creation, SQLite for storage, and a locally hosted Command-R LLM for response generation. This solution is ideal for small-scale data sets and prototypes
 
 ## Folder Structure and Modules
 
