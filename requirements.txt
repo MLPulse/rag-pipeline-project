@@ -5,3 +5,4 @@ langchain
 numpy
 scikit-learn
 jupyter
+sentence-transformers
