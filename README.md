@@ -33,10 +33,10 @@ rag_pipeline_project/
 ```
 
 ## Setup Instructions
-
-### Prerequisites
-- Python 3.8 or higher
-- Ollama and Command-R LLM installed locally
+- Clone the repository
+- Install the dependencies using requirements.txt
+- Ensure that Command-R is installed and configured to run locally via Ollama.
+- Run main.py with your PDF file and query.
 
 ## Usage
 
@@ -47,6 +47,7 @@ rag_pipeline_project/
 Place your PDF files in the data/ folder.
 
 2. Run the Pipeline
+
 Execute main.py to run the entire RAG pipeline:
 ```bash
 python main.py
