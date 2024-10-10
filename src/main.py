@@ -1,3 +1,4 @@
+import sys
 from src.extract_text import extract_text_from_pdf
 from src.generate_embeddings import generate_embeddings
 from src.store_embeddings import store_embedding
@@ -20,7 +21,6 @@ def main(pdf_path, query):
     print(response)
 
 if __name__ == "__main__":
-    import sys
     pdf_path = sys.argv[1] if len(sys.argv) > 1 else 'data/sample.pdf'
     query = sys.argv[2] if len(sys.argv) > 2 else "What is the main topic of the document?"
     main(pdf_path, query)
