@@ -20,6 +20,7 @@ def main(pdf_path, query):
     print(response)
 
 if __name__ == "__main__":
-    pdf_path = 'data/sample.pdf'
-    query = "What is the main topic of the document?"
+    import sys
+    pdf_path = sys.argv[1] if len(sys.argv) > 1 else 'data/sample.pdf'
+    query = sys.argv[2] if len(sys.argv) > 2 else "What is the main topic of the document?"
     main(pdf_path, query)
