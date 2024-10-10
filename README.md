@@ -40,23 +40,19 @@ rag_pipeline_project/
 
 ## Usage
 
-### Running the Pipeline
+- Place your PDF files in the data/ folder.
 
-1. Prepare Your Data
-
-Place your PDF files in the data/ folder.
-
-2. Run the Pipeline
-
-Execute main.py to run the entire RAG pipeline:
+- Execute main.py to run the entire RAG pipeline:
 ```bash
 python main.py
 ```
 By default, it processes the sample.pdf and responds to the sample query.
+But a specific query and pdf file can also be specified:
+```bash
+python main.py <pdf_path> <query>
+```
 
-3. Interactive Testing
-   
-Alternatively, use the Jupyter notebook for step-by-step interaction:
+- Alternatively, use the Jupyter notebook for step-by-step interaction:
 ```bash
 jupyter notebook src/rag_pipeline_demo.ipynb
 ```
@@ -68,7 +64,7 @@ This script ties together all the individual components of the RAG pipeline:
 - Generates embeddings
 - Stores embeddings in SQLite
 - Retrieves relevant text chunks based on a query
-- Generates responses using Command-R LLM
+- Generates responses using Command-R(35B) LLM
 
 ## Dependencies (requirements.txt)
 ```bash
@@ -79,5 +75,6 @@ langchain
 numpy
 scikit-learn
 jupyter
+sentence-transforners
 ```
 
