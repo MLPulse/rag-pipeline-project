@@ -1,11 +1,11 @@
-from ollama import Ollama
+from sentence_transformers import SentenceTransformer
 import src.extract_text as extract_text
 
-llm = Ollama(model='command-r')
+model = SentenceTransformer('all-MiniLM-L6-v2')
 
 def generate_embeddings(text):
-    response = llm.embed(text)
-    return response['embedding']
+    embedding = model.encode(text)
+    return embedding
 
 if __name__ == "__main__":
     text = extract_text.extract_text_from_pdf('../data/sample.pdf')
