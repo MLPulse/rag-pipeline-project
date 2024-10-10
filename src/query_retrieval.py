@@ -2,16 +2,14 @@ import sqlite3
 import numpy as np
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
-from ollama import Ollama
-
-llm = Ollama(model='command-r')
+import src.generate_embeddings as generate_embeddings
 
 conn = sqlite3.connect('../output/embeddings.db')
 c = conn.cursor()
 
 def retrieve_relevant_chunks(query, top_n=3):
     # Generate embedding for the query
-    query_embedding = llm.embed(query)['embedding']
+    query_embedding = generate_embeddings.generate_embeddings(query)
 
     # Retrieve all stored embeddings from the database
     c.execute('SELECT id, text, embedding FROM embeddings')
