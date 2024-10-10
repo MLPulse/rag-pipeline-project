@@ -21,9 +21,3 @@ def generate_response(chunks, query):
     # Generate response using the LLM
     response = llm.complete(prompt=prompt)
     return response
-
-if __name__ == "__main__":
-    query = "What is the main topic of the document?"
-    chunks = query_retrieval.retrieve_relevant_chunks(query)
-    response = generate_response(chunks, query)
-    print(response)
