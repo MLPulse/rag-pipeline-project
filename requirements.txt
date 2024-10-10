@@ -1,0 +1,7 @@
+PyPDF2
+ollama
+sqlite3
+langchain
+numpy
+scikit-learn
+jupyter
