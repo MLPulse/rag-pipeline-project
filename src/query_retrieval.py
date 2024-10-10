@@ -27,8 +27,3 @@ def retrieve_relevant_chunks(query, top_n=3):
     top_chunks = [row[1] for row in sorted_similarities[:top_n]]
 
     return top_chunks
-
-if __name__ == "__main__":
-    query = "What is the main topic of the document?"
-    chunks = retrieve_relevant_chunks(query)
-    print(chunks)
