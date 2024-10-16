@@ -1,8 +1,8 @@
 from langchain import PromptTemplate
-from ollama import Ollama
+from langchain.llms import Ollama
 import src.query_retrieval as query_retrieval
 
-llm = Ollama(model='command-r-35b')
+llm = Ollama(model='command-r:35b')
 
 def generate_response(chunks, query):
     # Define a prompt template using LangChain
@@ -20,7 +20,7 @@ def generate_response(chunks, query):
     
     # Generate response using the LLM
     try:
-        response = llm.complete(prompt=prompt)
+        response = llm(prompt=prompt)
     except Exception as e:
         print(f"An error occurred while generating the response: {e}")
         response = ""
