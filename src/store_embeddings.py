@@ -2,10 +2,19 @@ import sqlite3
 import src.generate_embeddings as generate_embeddings
 import pickle
 
-conn = sqlite3.connect('../output/embeddings.db')
+import os
+# Ensure the output directory exists
+output_dir = '../output'
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
+# Proceed with database connection
+conn = sqlite3.connect(os.path.join(output_dir, 'embeddings.db'))
+
 c = conn.cursor()
 
-c.execute('''CREATE TABLE IF NOT EXISTS embeddings (id INTEGER PRIMARY KEY, text TEXT, embedding BLOB)''')
+c.execute('''CREATE TABLE IF NOT EXISTS embeddings 
+             (id INTEGER PRIMARY KEY, text TEXT, embedding BLOB)''')
 
 def store_embedding(text, embedding):
     try:
