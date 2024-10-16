@@ -15,6 +15,7 @@ rag_pipeline_project/
 ├── requirements.txt            # List of required Python dependencies
 ├── main.py                     # Main execution script to run the complete workflow
 ├── .gitignore                  # Specifies files and folders to ignore in Git
+├── rag_pipeline_demo.ipynb     # Jupyter notebook to demonstrate and test the RAG pipeline interactively
 ├── data/                       # Contains raw data (PDF files)
 │   └── sample.pdf
 │
@@ -26,8 +27,8 @@ rag_pipeline_project/
     ├── generate_embeddings.py  # Generates embeddings for extracted text using Ollama
     ├── store_embeddings.py     # Stores generated embeddings in SQLite
     ├── query_retrieval.py      # Retrieves relevant text chunks using cosine similarity
-    ├── generate_response.py    # Generates responses using the locally hosted Command-R LLM
-    └── rag_pipeline_demo.ipynb # Jupyter notebook to demonstrate and test the RAG pipeline interactively
+    └── generate_response.py    # Generates responses using the locally hosted Command-R LLM
+     
 ```
 
 ## Setup Instructions
